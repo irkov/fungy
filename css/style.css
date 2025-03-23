@@ -1,7 +1,5 @@
-/* Изначально приоритетность слоев идет сверху вниз. 
-Но можно задавать порядок в начале, перечислив слови через запятую*/
-/* @layer reset, base, layout, components {
-} */
+
+@layer reset, base, layout, components, utilities;
 
 @layer reset {
   /* Box sizing rules */
