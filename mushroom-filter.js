@@ -14,5 +14,21 @@ function updateFilter(e) {
   const filterType = e.target.name;
   currentFilter[filterType] = e.target.value;
 
-  console.log(currentFilter);
+  filterCards();
+}
+
+function filterCards() {
+  cards.forEach((card) => {
+    const season = card.querySelector("[data-season]").dataset.season;
+    const edible = card.querySelector("[data-edible]").dataset.edible;
+
+    const matchesSeason = currentFilter.season === season;
+    const matchesEdible = currentFilter.edible === edible;
+
+    if ((matchesEdible || currentFilter.edible === "all") && (matchesSeason || currentFilter.season === "all")) {
+         card.hidden = false;
+    } else {
+        card.hidden = true;
+    }
+  });
 }
